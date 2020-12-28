@@ -1,0 +1,47 @@
+package com.automation.pageobjects.gmail;
+
+import com.automation.pageobjects.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+
+public class NewEmailPage extends BasePage {
+
+    @FindBy(xpath = "//textarea[@name='to']")
+    WebElement toField;
+    @FindBy(xpath = "//input[@name='subjectbox']")
+    WebElement subjectField;
+    @FindBy(css = ".Ha")
+    WebElement closeButton;
+    @FindBy(css=".oh.J-Z-I.J-J5-Ji.T-I-ax7")
+    WebElement deleteButton;
+
+
+    public NewEmailPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void createDraft(String to, String subject) {
+        waitForElementsToBeVisible(toField, subjectField, closeButton);
+        toField.sendKeys(to);
+        subjectField.sendKeys(subject);
+        closeButton.click();
+    }
+
+    public void editDraftSubject(String subject) {
+        waitForElementToBeClickable(subjectField);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.focus();");
+        jse.executeScript("arguments[0].focus();", subjectField);
+        subjectField.clear();
+        subjectField.sendKeys(subject);
+        closeButton.click();
+    }
+
+    public void deleteEmail() {
+        waitForElementToBeClickable(deleteButton);
+        deleteButton.click();
+    }
+}
