@@ -55,4 +55,13 @@ public class ConfigFileReader {
         else
             throw new RuntimeException("Wait time not specified in the config.properties file");
     }
+
+    public int getPollingTime() {
+        String pollingTime = properties.getProperty("pollingTime");
+        if (pollingTime != null)
+            return Integer.parseInt(pollingTime);
+        else
+            throw new RuntimeException("Polling time not specified in the config.properties file");
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.automation.pageobjects.gmail;
 
 import com.automation.pageobjects.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,7 @@ public class InboxPage extends BasePage {
     List<WebElement> emailList;
     @FindBy(css = ".T-I.T-I-KE.L3")
     WebElement composeButton;
-    @FindBy(css = "a[href$='drafts']")
+    By draftsLinkLocator = By.cssSelector("a[href$='drafts']");
     WebElement draftsLink;
 
     public InboxPage(WebDriver driver) {
@@ -40,7 +41,7 @@ public class InboxPage extends BasePage {
     }
 
     public void clickDraftsLink() {
-        waitForElementToBeClickable(draftsLink);
+        draftsLink = findElement(draftsLinkLocator);
         draftsLink.click();
         wait.until(ExpectedConditions.urlContains("drafts"));
     }
