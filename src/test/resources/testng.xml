@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GmailTestSuite">
+    <test name="GmailTest">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="GmailTestSuite.GmailTestNotPomVersion" />
+        </classes>
+    </test>
+</suite>
