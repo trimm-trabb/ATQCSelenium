@@ -1,4 +1,4 @@
-package GmailTestSuite;
+package Tests.GmailTestSuite;
 
 import java.util.List;
 import java.time.Duration;

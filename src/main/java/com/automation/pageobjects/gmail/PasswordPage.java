@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 public class PasswordPage extends BasePage {
 
     @FindBy(xpath = "//input[@name='password']")
-    WebElement passwordField;
+    private WebElement passwordField;
     @FindBy(id = "passwordNext")
-    WebElement nextButton;
+    private WebElement nextButton;
 
     public PasswordPage(WebDriver driver) {
         super(driver);
