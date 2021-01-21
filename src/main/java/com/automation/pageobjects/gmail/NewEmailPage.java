@@ -4,19 +4,19 @@ import com.automation.pageobjects.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-
 
 public class NewEmailPage extends BasePage {
 
     @FindBy(xpath = "//textarea[@name='to']")
-    WebElement toField;
+    private WebElement toField;
     @FindBy(xpath = "//input[@name='subjectbox']")
-    WebElement subjectField;
+    private WebElement subjectField;
     @FindBy(css = ".Ha")
-    WebElement closeButton;
+    private WebElement closeButton;
     @FindBy(css=".oh.J-Z-I.J-J5-Ji.T-I-ax7")
-    WebElement deleteButton;
+    private WebElement deleteButton;
 
 
     public NewEmailPage(WebDriver driver) {

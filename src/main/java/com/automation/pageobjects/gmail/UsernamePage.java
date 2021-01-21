@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 public class UsernamePage extends BasePage {
 
     @FindBy(css = "input[type='email']")
-    WebElement usernameField;
+    private WebElement usernameField;
     @FindBy(css = "#identifierNext")
-    WebElement nextButton;
+    private WebElement nextButton;
 
     public UsernamePage(WebDriver driver) {
         super(driver);

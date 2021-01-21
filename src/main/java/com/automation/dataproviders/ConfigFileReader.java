@@ -63,5 +63,4 @@ public class ConfigFileReader {
         else
             throw new RuntimeException("Polling time not specified in the config.properties file");
     }
-
 }

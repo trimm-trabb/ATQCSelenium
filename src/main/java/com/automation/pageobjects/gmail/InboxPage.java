@@ -2,6 +2,7 @@ package com.automation.pageobjects.gmail;
 
 import com.automation.pageobjects.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,11 +13,11 @@ import java.util.List;
 public class InboxPage extends BasePage {
 
     @FindBy(className = "zA")
-    List<WebElement> emailList;
+    private List<WebElement> emailList;
     @FindBy(css = ".T-I.T-I-KE.L3")
-    WebElement composeButton;
-    By draftsLinkLocator = By.cssSelector("a[href$='drafts']");
-    WebElement draftsLink;
+    private WebElement composeButton;
+    private By draftsLinkLocator = By.cssSelector("a[href$='drafts']");
+    private WebElement draftsLink;
 
     public InboxPage(WebDriver driver) {
         super(driver);
@@ -41,7 +42,12 @@ public class InboxPage extends BasePage {
     }
 
     public void clickDraftsLink() {
-        draftsLink = findElement(draftsLinkLocator);
+        for (int i = 0; i < 5; i++) {
+            try {
+                draftsLink = findElement(draftsLinkLocator);
+            } catch (StaleElementReferenceException ex) {
+            }
+        }
         draftsLink.click();
         wait.until(ExpectedConditions.urlContains("drafts"));
     }
