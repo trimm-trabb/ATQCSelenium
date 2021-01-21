@@ -1,9 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="GmailTestSuite">
-    <test name="GmailTest">
+<suite name="GmailTestSuite" >
+    <listeners>
+        <listener class-name="com.automation.driver.WebDriverListener"/>
+    </listeners>
+    <test name="GmailTest" parallel="methods" thread-count="4">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="GmailTestSuite.GmailTestNotPomVersion" />
+            <class name="Tests.GmailTestSuite.GmailTest" />
         </classes>
     </test>
 </suite>
