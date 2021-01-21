@@ -15,7 +15,7 @@ import static org.testng.Assert.*;
 
 public class GmailTest {
 
-    private ConfigFileReader reader = new ConfigFileReader();
+    private ConfigFileReader reader;
 
     @BeforeMethod
     public void initialize() {
