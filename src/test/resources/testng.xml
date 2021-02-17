@@ -1,10 +1,16 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="GmailTestSuite" >
     <listeners>
         <listener class-name="com.automation.driver.WebDriverListener"/>
     </listeners>
     <test name="GmailTest" parallel="methods" thread-count="4">
         <parameter name="browser" value="Chrome"/>
+        <groups>
+            <run>
+                <include name="emails"></include>
+                <include name="drafts"></include>
+            </run>
+        </groups>
         <classes>
             <class name="Tests.GmailTestSuite.GmailTest" />
         </classes>
