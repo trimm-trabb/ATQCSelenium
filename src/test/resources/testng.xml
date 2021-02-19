@@ -3,14 +3,8 @@
     <listeners>
         <listener class-name="com.automation.driver.WebDriverListener"/>
     </listeners>
-    <test name="GmailTest" parallel="methods" thread-count="4">
+    <test name="GmailTest">
         <parameter name="browser" value="Chrome"/>
-        <groups>
-            <run>
-                <include name="emails"></include>
-                <include name="drafts"></include>
-            </run>
-        </groups>
         <classes>
             <class name="Tests.GmailTestSuite.GmailTest" />
         </classes>
