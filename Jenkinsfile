@@ -13,8 +13,7 @@ pipeline {
                 withMaven(maven : 'Maven 3.6.3') {
                     sh'mvn test -DsuiteXmlFile=testng.xml -Dbrowser=$browser'
                 }
-                publishHTML(
-                            [
+                publishHTML target: [
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,
                             keepAll: false,
@@ -23,7 +22,6 @@ pipeline {
                             reportName: 'HTML Report',
                             reportTitles: ''
                             ]
-                            )
             }
         }
     }
