@@ -20,7 +20,7 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: false,
-                        reportDir: '/Users/anastasia/.jenkins/jobs/SeleniumPipeline/htmlreports/HTML_20Report',
+                        reportDir: '/Users/anastasia/.jenkins/workspace/SeleniumPipeline/target/surefire-reports',
                         reportFiles: 'index.html',
                         reportName: 'HTML Report',
                         reportTitles: ''
