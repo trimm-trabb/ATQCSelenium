@@ -22,9 +22,8 @@ pipeline {
                         keepAll: false,
                         reportDir: '/Users/anastasia/.jenkins/workspace/SeleniumPipeline/target/surefire-reports',
                         reportFiles: 'index.html',
-                        reportName: 'HTML Report',
-                        reportTitles: ''
-                    ]
+                        reportName: 'HTML Report'
+                        ]
                 }
             }
         }
