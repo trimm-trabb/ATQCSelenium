@@ -16,14 +16,14 @@ pipeline {
             }
             post {
                 always {
-                    publishHTML target: [
+                    publishHTML (target: [
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: false,
                         reportDir: '/Users/anastasia/.jenkins/workspace/SeleniumPipeline/target/surefire-reports',
                         reportFiles: 'index.html',
                         reportName: 'HTML Report'
-                        ]
+                    ])
                 }
             }
         }
