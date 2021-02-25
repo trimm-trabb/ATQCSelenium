@@ -14,6 +14,18 @@ pipeline {
                     sh'mvn test -DsuiteXmlFile=testng.xml -Dbrowser=$browser'
                 }
             }
+            post {
+                            always {
+                                publishHTML (target: [
+                                    allowMissing: false,
+                                    alwaysLinkToLastBuild: true,
+                                    keepAll: false,
+                                    reportDir: '/target/surefire-reports',
+                                    reportFiles: 'index.html',
+                                    reportName: 'HTML Report'
+                                ])
+                            }
+                        }
 
         }
 
