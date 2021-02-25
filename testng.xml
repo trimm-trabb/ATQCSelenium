@@ -5,11 +5,6 @@
     </listeners>
     <test name="GmailTest">
         <parameter name="browser" value="${browser}"/>
-        <groups>
-            <run>
-                <include name="emails" />
-            </run>
-        </groups>
         <classes>
             <class name="Tests.GmailTestSuite.GmailTest" />
         </classes>
