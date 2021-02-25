@@ -15,7 +15,7 @@ pipeline {
                 }
             }
             post {
-                failure {
+                always {
                     publishHTML (target: [
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,

@@ -3,6 +3,11 @@
     <listeners>
         <listener class-name="com.automation.driver.WebDriverListener"/>
     </listeners>
+    <groups>
+        <run>
+            <include name="emails" />
+        </run>
+    </groups>
     <test name="GmailTest">
         <parameter name="browser" value="${browser}"/>
         <classes>
