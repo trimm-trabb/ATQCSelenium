@@ -14,19 +14,7 @@ pipeline {
                     sh'mvn test -DsuiteXmlFile=testng.xml -Dbrowser=$browser'
                 }
             }
-            post {
-                        always {
-                            publishHTML ([
-                                    allowMissing: false,
-                                    alwaysLinkToLastBuild: true,
-                                    keepAll: false,
-                                    reportDir: '/Users/anastasia/.jenkins/workspace/Selenium/target/surefire-reports',
-                                    reportFiles: 'index.html',
-                                    reportName: 'HTML Report',
-                                    reportTitles: ''
-                                ])
-                        }
-                    }
+
         }
 
     }
