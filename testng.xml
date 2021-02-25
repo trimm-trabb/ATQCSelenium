@@ -4,12 +4,12 @@
         <listener class-name="com.automation.driver.WebDriverListener"/>
     </listeners>
     <test name="GmailTest">
+        <parameter name="browser" value="${browser}"/>
         <groups>
             <run>
                 <include name="emails" />
             </run>
         </groups>
-        <parameter name="browser" value="${browser}"/>
         <classes>
             <class name="Tests.GmailTestSuite.GmailTest" />
         </classes>
